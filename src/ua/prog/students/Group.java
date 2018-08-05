@@ -1,21 +1,69 @@
 package ua.prog.students;
 
-import java.util.Arrays;
-import java.util.Iterator;
 
-public class Group {
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.Scanner;
+
+import javax.swing.JOptionPane;
+
+public class Group implements Voenkom {
+	private String groupName;
 	
 	private Student[] stud = new Student[10];
 	
 	
+	
 	public Group() {
 		super();
+		this.groupName = "unknown";
 	
 	}
 	
+	
+	public Group(String groupName) {
+		super();
+		this.groupName = groupName;
+	}
+	
+
+
+	public String getGroupName() {
+		return groupName;
+	}
+
+
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+	}
+
+	
+	public void insertInteractive() throws MyException {
+		Student student = new Student();
+		
+		student.setFirstName(JOptionPane.showInputDialog(null, "Enter first name: "));
+		student.setLastName(JOptionPane.showInputDialog(null, "Enter last name: "));
+		student.setAge(Integer.parseInt(JOptionPane.showInputDialog(null, "Enter age: ")));
+		student.setGroup(JOptionPane.showInputDialog(null, "Enter the group: "));
+		student.setSex(Boolean.parseBoolean(JOptionPane.showInputDialog(null, "Enter the gender: ")));
+		student.setStudentID(Integer.parseInt(JOptionPane.showInputDialog(null, "Enter the student ID: ")));
+	
+	for (int i = 0; i < stud.length; i++) {
+		if(stud[i] == null) {
+			student.setGroup(this.groupName);
+			stud[i] = student;
+			System.out.println("Student " + stud[i].getLastName() + " added.");
+			return;
+		}
+	}throw new MyException();
+	
+	}
+
 	public void insert(Student student) throws MyException{
 		for (int i = 0; i < stud.length; i++) {
 			if(stud[i] == null) {
+				student.setGroup(this.groupName);
 				stud[i] = student;
 				return;
 			}
@@ -26,7 +74,7 @@ public class Group {
 	public Student find (String searchName) 
 	{
 		for (Student student : stud) {
-			if(student!=null&&student.getName().equals(searchName)) {
+			if(student!=null&&student.getLastName().equals(searchName)) {
 				return student;
 			}
 		}
@@ -44,6 +92,46 @@ public class Group {
 
 	}
 	
+	
+	private static Comparator<Student> nameComp = new Comparator<Student>() {
+
+		@Override
+		public int compare(Student e1, Student e2) {
+			return e1.getLastName().compareTo(e2.getLastName());
+		}
+	};
+	
+	private static Comparator<Student>ageComp = new Comparator<Student>() {
+
+		@Override
+		public int compare(Student o1, Student o2) {
+			return o1.getAge() -o2.getAge();
+			
+		}
+		
+	};
+	
+	private static Comparator<Student> idComp = new Comparator<Student>() {
+
+		@Override
+		public int compare(Student a1, Student a2) {
+			return a1.getStudentID() -a2.getStudentID();
+			
+		}
+		
+	};
+	
+	public void sortByName() {
+		Arrays.sort(stud, nameComp);
+	}
+	
+	public void sortByAge() {
+		Arrays.sort(stud,ageComp);
+	}
+	
+	public void sortById() {
+		Arrays.sort(stud, idComp);
+	}
 
 	@Override
 	public String toString() {
@@ -52,10 +140,41 @@ public class Group {
 			if(stud[i]!= null) {
 				sb.append(stud[i]);
 			}
+			
+			//e.g.use of Age Comparator
+			sortByAge();
+		
+			
 			sb.append(System.lineSeparator());
 		}
 		return sb.toString();
 	
 
 }
+
+
+	@Override
+	public Student[] getSoldiers() {
+		
+		int n = 0;
+		for (Student student : stud) {
+			if(student!=null&& student.isSex() && student.getAge()>=18) {
+				n++;
+			}
+		}
+		Student[] soldier = new Student[n];
+		int i = 0;
+		
+		for (Student student : this.stud) {
+			if(student!=null&& student.isSex() && student.getAge()>=18) {
+				soldier[i++] = student;
+			}
+			
+		}
+		return soldier;
+		
+		
+		
+		
+	}
 }
