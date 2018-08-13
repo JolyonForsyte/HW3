@@ -27,6 +27,7 @@ public class Main {
 			
 			
 			arr.writeIntoFile(new File("students.csv"));
+			
 			System.out.println(arr);
 			
 			System.out.println("*******************************");

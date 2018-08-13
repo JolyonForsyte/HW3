@@ -1,10 +1,10 @@
- Person [age=19, firstName=Ivan, lastName=Petrenko, sex=true] ,group AN 143, student ID = 12345]
- Person [age=20, firstName=Dima, lastName=Petrov, sex=true] ,group AN 143, student ID = 12346]
- Person [age=22, firstName=Darja, lastName=Nesterenko, sex=false] ,group AN 143, student ID = 12347]
- Person [age=21, firstName=Ivan, lastName=Shipilin, sex=true] ,group AN 143, student ID = 12348]
- Person [age=19, firstName=Olga, lastName=Pavliuk, sex=false] ,group AN 143, student ID = 12349]
- Person [age=20, firstName=Alex, lastName=Andreev, sex=true] ,group AN 143, student ID = 12355]
- Person [age=23, firstName=Andrew, lastName=Ivanov, sex=true] ,group AN 143, student ID = 12356]
- Person [age=25, firstName=Evg, lastName=Konoplyanka, sex=true] ,group AN 143, student ID = 12357]
- Person [age=20, firstName=Andrej, lastName=Shevchenko, sex=true] ,group AN 143, student ID = 12358]
- Person [age=22, firstName=Serg, lastName=Rebrov, sex=true] ,group AN 143, student ID = 12359]
+ age=19, firstName=Ivan, lastName=Petrenko, sex=true ,group AN 143, student ID = 12345
+ age=20, firstName=Dima, lastName=Petrov, sex=true ,group AN 143, student ID = 12346
+ age=22, firstName=Darja, lastName=Nesterenko, sex=false ,group AN 143, student ID = 12347
+ age=21, firstName=Ivan, lastName=Shipilin, sex=true ,group AN 143, student ID = 12348
+ age=19, firstName=Olga, lastName=Pavliuk, sex=false ,group AN 143, student ID = 12349
+ age=20, firstName=Alex, lastName=Andreev, sex=true ,group AN 143, student ID = 12355
+ age=23, firstName=Andrew, lastName=Ivanov, sex=true ,group AN 143, student ID = 12356
+ age=25, firstName=Evg, lastName=Konoplyanka, sex=true ,group AN 143, student ID = 12357
+ age=20, firstName=Andrej, lastName=Shevchenko, sex=true ,group AN 143, student ID = 12358
+ age=22, firstName=Serg, lastName=Rebrov, sex=true ,group AN 143, student ID = 12359

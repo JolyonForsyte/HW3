@@ -191,7 +191,6 @@ public class Group implements Voenkom {
 			for(Student arr : stud) {
 				String append = " ";
 				writer.write(append + arr);
-				append = ",  ";
 				writer.write("\n");
 			}
 			

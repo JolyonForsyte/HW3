@@ -42,7 +42,7 @@ public class Student extends Person  {
 
 	@Override
 	public String toString() {
-		return super.toString()+ " ,group "+group+ ", student ID = "+studentID +"]";
+		return super.toString()+ " ,group "+group+ ", student ID = "+studentID;
 	}
 
     //sorting by last Name (Interface Comparable)
