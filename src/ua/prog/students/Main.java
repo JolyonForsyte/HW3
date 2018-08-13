@@ -1,5 +1,6 @@
 package ua.prog.students;
 
+import java.io.File;
 import java.util.Iterator;
 
 public class Main {
@@ -24,6 +25,8 @@ public class Main {
 				System.out.println(e.getMessage());
 			}
 			
+			
+			arr.writeIntoFile(new File("students.csv"));
 			System.out.println(arr);
 			
 			System.out.println("*******************************");

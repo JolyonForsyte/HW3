@@ -1,6 +1,9 @@
 package ua.prog.students;
 
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Iterator;
@@ -177,4 +180,30 @@ public class Group implements Voenkom {
 		
 		
 	}
+	
+	
+	//writing output into csv file
+	
+	public void writeIntoFile(File out) {
+		try {
+			FileWriter writer = new FileWriter(out);
+			
+			for(Student arr : stud) {
+				String append = " ";
+				writer.write(append + arr);
+				append = ",  ";
+				writer.write("\n");
+			}
+			
+	        writer.flush();
+	        writer.close();
+		
+	}
+		catch (IOException e) {
+		
+			e.printStackTrace();
+		}
+	}
+	
+
 }
